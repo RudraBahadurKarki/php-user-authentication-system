@@ -48,9 +48,8 @@ a:hover {
 }
 
 .message {
-    color: rgb(145, 196, 58);
-    font-size: 22px;
-    font-weight: 100;
+    color: green;
+    font-size: 16px;
 }
 
 .logout-btn {
