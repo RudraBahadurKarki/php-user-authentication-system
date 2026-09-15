@@ -15,8 +15,8 @@ if (!isset($_SESSION['email'])) {
 <div class="dashboard-container">
     <h2>Please find your registered information as follows:</h2>
     <ul>
-        <li><strong>Name:</strong> <?= $_SESSION['name'] ?></li>
-        <li><strong>Email:</strong> <?= $_SESSION['email'] ?></li>
+        <strong>Name:</strong> <?= $_SESSION['name'] ?><br>
+        <strong>Email:</strong> <?= $_SESSION['email'] ?>
     </ul>
     <a class="logout-btn" href="logout.php">Logout</a>
 </div>

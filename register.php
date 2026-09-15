@@ -2,7 +2,8 @@
 include 'db.php';
 $message = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -11,15 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("sss", $name, $email, $password);
 
     try {
-        $stmt->execute();
-        $message = "Registered successfully. <a href='login.php'>Login here</a>";
-    } catch (mysqli_sql_exception $e) {
-        if (str_contains($e->getMessage(), 'Duplicate entry')) {
-            $message = "This email is already registered. <a href='login.php'>Login instead</a>.";
-        } else {
-            $message = "Registration failed: " . $e->getMessage();
+            $stmt->execute();
+            header("Location: login.php?registered=1");
+            exit;
+            } catch (mysqli_sql_exception $e) {
+            if (str_contains($e->getMessage(), 'Duplicate entry')) {
+                $message = "This email is already registered.";
+            } else {
+                $message = "Registration failed.";
+            }
         }
-    }
 }
 ?>
 <!DOCTYPE html>
