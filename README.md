@@ -24,7 +24,7 @@ A simple user registration and login system built with PHP and MySQL as part of 
 ## Project Structure
 
 ```text
-web-tech-project/
+php-user-authentication-system/
 │
 ├── dashboard.php
 ├── db.php
@@ -70,7 +70,7 @@ C:\xampp\htdocs\
 The folder should be:
 
 ```text
-C:\xampp\htdocs\web-tech-project
+C:\xampp\htdocs\php-user-authentication-system
 ```
 
 ### 3. Start XAMPP
@@ -99,7 +99,7 @@ Make sure the database settings in `db.php` match your local MySQL configuration
 Go to:
 
 ```text
-http://localhost/web-tech-project/register.php
+http://localhost/php-user-authentication-system/register.php
 ```
 
 Register a new account and then log in.
